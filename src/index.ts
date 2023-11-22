@@ -6,6 +6,10 @@ const port = process.env.PORT || 3001;
 
 
 
+if(process.env.MONGO_URL){
+throw new Error("add Your mongo url");
+
+}
 
 app.get('/', (req: Request, res: Response) => {
     return res.send('Express Typescript on Vercel')
