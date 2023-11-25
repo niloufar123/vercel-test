@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// import mongoose, { Collection, FilterQuery, ObjectId } from 'mongoose';
 const Blog = require("../models/Blog");
 // import {Blog } from '../models/blog'
 exports.getIndex = (req, res) => __awaiter(void 0, void 0, void 0, function* () {

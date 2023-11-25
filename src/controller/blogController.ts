@@ -1,5 +1,5 @@
 import * as express from 'express';
-import mongoose, { Collection, FilterQuery, ObjectId } from 'mongoose';
+// import mongoose, { Collection, FilterQuery, ObjectId } from 'mongoose';
 
 const Blog = require("../models/Blog");
 // import {Blog } from '../models/blog'
