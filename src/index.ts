@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 // const path=require('path')
 const cors = require('cors');
 
-//  import blogRoutes from './routes/blogs'
+ import blogRoutes from './routes/blogs'
 //  import userRoutes from './routes/users'
 
 import connectDB from './config/db';
@@ -27,11 +27,11 @@ app.use(cors());
 dotenv.config({ path: "./config/config.env" });
 
 //--------------------------database connectio
-// connectDB()
+connectDB()
 app.use(bodyParser.json())
 
 //--------------------------routes
-// app.use("/",blogRoutes)
+app.use("/",blogRoutes)
 // app.use("/users",userRoutes)
 
 app.get('/', (req: Request, res: Response) => {
