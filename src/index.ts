@@ -20,20 +20,20 @@ app.use(cors());
 dotenv.config({ path: "./config/config.env" });
 
 //--------------------------database connectio
-connectDB()
-app.use(bodyParser.json())
+// connectDB()
+// app.use(bodyParser.json())
 
-//--------------------------routes
-app.use("/",blogRoutes)
-app.use("/users",userRoutes)
+// //--------------------------routes
+// app.use("/",blogRoutes)
+// app.use("/users",userRoutes)
 
 
-// app.get('/', (req: Request, res: Response) => {
-//     return res.send('Express Typescript on Vercel')
-//   })
+app.get('/', (req: Request, res: Response) => {
+    return res.send('Express Typescript on Vercel')
+  })
 
-//   app.get('/ping', (_req: Request, res: Response) => {
-//     return res.send('pong 🏓')
-//   })
+  app.get('/ping', (_req: Request, res: Response) => {
+    return res.send('pong 🏓')
+  })
 
 app.listen(port,()=>  console.log(`Server : ${port}`))
