@@ -24,13 +24,15 @@ connectDB()
 // app.use(bodyParser.json())
 
 // //--------------------------routes
-app.use("/",blogRoutes)
+app.use("/", (req: Request, res: Response) => {
+  return res.send('Hello world !')
+})
 // app.use("/users",userRoutes)
 
 
-app.get('/', (req: Request, res: Response) => {
-    return res.send('Express Typescript on Vercel')
-  })
+// app.get('/', (req: Request, res: Response) => {
+//     return res.send('Express Typescript on Vercel')
+//   })
 
   app.get('/ping', (_req: Request, res: Response) => {
     return res.send('pong 🏓')

@@ -8,7 +8,6 @@ const fs = require('fs');
 const https = require('https');
 const path = require('path');
 const cors = require('cors');
-const blogs_1 = __importDefault(require("./routes/blogs"));
 const db_1 = __importDefault(require("./config/db"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3001;
@@ -19,11 +18,13 @@ app.use(cors());
 (0, db_1.default)();
 // app.use(bodyParser.json())
 // //--------------------------routes
-app.use("/", blogs_1.default);
-// app.use("/users",userRoutes)
-app.get('/', (req, res) => {
-    return res.send('Express Typescript on Vercel');
+app.use("/", (req, res) => {
+    return res.send('Hello world !');
 });
+// app.use("/users",userRoutes)
+// app.get('/', (req: Request, res: Response) => {
+//     return res.send('Express Typescript on Vercel')
+//   })
 app.get('/ping', (_req, res) => {
     return res.send('pong 🏓');
 });
