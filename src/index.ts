@@ -20,7 +20,7 @@ app.use(cors());
 dotenv.config({ path: "./config/config.env" });
 
 //--------------------------database connectio
-// connectDB()
+connectDB()
 // app.use(bodyParser.json())
 
 // //--------------------------routes
