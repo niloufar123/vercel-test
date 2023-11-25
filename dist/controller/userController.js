@@ -25,12 +25,11 @@ exports.createUser = (req, res, next) => __awaiter(void 0, void 0, void 0, funct
             throw error;
         }
         else {
-            bcrypt.hash(password, 10, (err, hash) => __awaiter(void 0, void 0, void 0, function* () {
-                console.log('hash', hash);
-                if (err)
-                    return next(err);
-                yield User.create({ fullname, email, password: hash });
-            }));
+            // bcrypt.hash(password, 10,async (err:any, hash:any) => {
+            //     console.log('hash',hash)
+            //     if (err) return next(err);
+            yield User.create({ fullname, email, password });
+            // });
             //? Send Welcome Email
             // sendEmail(
             //     email,
@@ -53,22 +52,21 @@ exports.handleLogin = (req, res, next) => __awaiter(void 0, void 0, void 0, func
             error.code = '404';
             throw error;
         }
-        const isEqual = yield bcrypt.compare(password, user.password);
-        if (isEqual) {
-            let userCon = {
-                userId: user._id,
-                fullname: user.fullname,
-                email: user.email
-            };
-            jwt.sign({ userCon }, process.env.TOKEN_SECRET, { expiresIn: "1h" }, (err, token) => {
-                res.json({ token });
-            });
-        }
-        else {
-            const err = new Error("Password is incorrect");
-            err.code = '422';
-            throw err;
-        }
+        // const isEqual=await bcrypt.compare(password,user.password)
+        // if(isEqual){
+        let userCon = {
+            userId: user._id,
+            fullname: user.fullname,
+            email: user.email
+        };
+        jwt.sign({ userCon }, process.env.TOKEN_SECRET, { expiresIn: "1h" }, (err, token) => {
+            res.json({ token });
+        });
+        // }else{
+        // const err:NodeJS.ErrnoException=new Error("Password is incorrect")
+        // err.code='422';
+        // throw err
+        // }
     }
     catch (error) {
         next(error);

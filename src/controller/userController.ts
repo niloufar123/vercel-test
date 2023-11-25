@@ -17,13 +17,13 @@ exports.createUser = async (req:express.Request, res:express.Response,next:any) 
             error.code = '422';
             throw error;
         } else {
-            bcrypt.hash(password, 10,async (err:any, hash:any) => {
-                console.log('hash',hash)
-                if (err) return next(err);
+            // bcrypt.hash(password, 10,async (err:any, hash:any) => {
+            //     console.log('hash',hash)
+            //     if (err) return next(err);
         
-                await User.create({ fullname, email, password:hash });
+                await User.create({ fullname, email, password });
                 
-            });
+            // });
 
             //? Send Welcome Email
             // sendEmail(
@@ -52,8 +52,8 @@ exports.handleLogin=async(req:express.Request,res:express.Response,next:any)=>{
             error.code = '404';
             throw error;
         }
-        const isEqual=await bcrypt.compare(password,user.password)
-        if(isEqual){
+        // const isEqual=await bcrypt.compare(password,user.password)
+        // if(isEqual){
             let userCon={
                 userId:user._id,
                 fullname:user.fullname,
@@ -65,11 +65,11 @@ exports.handleLogin=async(req:express.Request,res:express.Response,next:any)=>{
 
 
 
-        }else{
-            const err:NodeJS.ErrnoException=new Error("Password is incorrect")
-            err.code='422';
-            throw err
-        }
+        // }else{
+            // const err:NodeJS.ErrnoException=new Error("Password is incorrect")
+            // err.code='422';
+            // throw err
+        // }
         
     } catch (error) {
         next(error)

@@ -17,14 +17,14 @@ const port = process.env.PORT || 3001
 app.use(cors());
 
 //-------------------------- Load Config
-dotenv.config({ path: "./config/config.env" });
+// dotenv.config({ path: "./config/config.env" });
 
 //--------------------------database connectio
 connectDB()
 // app.use(bodyParser.json())
 
 // //--------------------------routes
-// app.use("/",blogRoutes)
+app.use("/",blogRoutes)
 // app.use("/users",userRoutes)
 
 
