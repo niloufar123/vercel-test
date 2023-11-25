@@ -10,9 +10,6 @@ const body_parser_1 = __importDefault(require("body-parser"));
 // const https = require('https')
 // const path=require('path')
 const cors = require('cors');
-//  import blogRoutes from './routes/blogs'
-//  import userRoutes from './routes/users'
-const db_1 = __importDefault(require("./config/db"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3001;
 if (process.env.MONGO_URL) {
@@ -22,7 +19,7 @@ app.use(cors());
 //-------------------------- Load Config
 dotenv_1.default.config({ path: "./config/config.env" });
 //--------------------------database connectio
-(0, db_1.default)();
+// connectDB()
 app.use(body_parser_1.default.json());
 //--------------------------routes
 // app.use("/",blogRoutes)
