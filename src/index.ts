@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 // const fs = require('fs')
 // const https = require('https')
 // const path=require('path')
-const cors = require('cors');
+// const cors = require('cors');
 
  import blogRoutes from './routes/blogs'
 //  import userRoutes from './routes/users'
@@ -21,17 +21,17 @@ throw new Error("add Your mongo url");
 
 }
 
-app.use(cors());
+// app.use(cors());
 
 //-------------------------- Load Config
 dotenv.config({ path: "./config/config.env" });
 
 //--------------------------database connectio
 connectDB()
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 
 //--------------------------routes
-app.use("/",blogRoutes)
+// app.use("/",blogRoutes)
 // app.use("/users",userRoutes)
 
 app.get('/', (req: Request, res: Response) => {
