@@ -24,11 +24,11 @@ app.use(body_parser_1.default.json());
 //--------------------------routes
 app.use("/", blogs_1.default);
 app.use("/users", users_1.default);
-// app.get('/', (req: Request, res: Response) => {
-//     return res.send('Express Typescript on Vercel')
-//   })
-//   app.get('/ping', (_req: Request, res: Response) => {
-//     return res.send('pong 🏓')
-//   })
+app.get('/', (req, res) => {
+    return res.send('Express Typescript on Vercel');
+});
+app.get('/ping', (_req, res) => {
+    return res.send('pong 🏓');
+});
 app.listen(port, () => console.log(`Server : ${port}`));
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=app.js.map

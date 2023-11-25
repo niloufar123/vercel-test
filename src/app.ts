@@ -28,12 +28,12 @@ app.use("/",blogRoutes)
 app.use("/users",userRoutes)
 
 
-// app.get('/', (req: Request, res: Response) => {
-//     return res.send('Express Typescript on Vercel')
-//   })
+app.get('/', (req: Request, res: Response) => {
+    return res.send('Express Typescript on Vercel')
+  })
 
-//   app.get('/ping', (_req: Request, res: Response) => {
-//     return res.send('pong 🏓')
-//   })
+  app.get('/ping', (_req: Request, res: Response) => {
+    return res.send('pong 🏓')
+  })
 
 app.listen(port,()=>  console.log(`Server : ${port}`))
