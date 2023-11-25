@@ -1,16 +1,16 @@
 import express, { Request, Response } from 'express'
 
-// import  dotenv from 'dotenv';
-// import bodyParser from 'body-parser';
-// const fs = require('fs')
-// const https = require('https')
-// const path=require('path')
-// const cors = require('cors');
+import  dotenv from 'dotenv';
+import bodyParser from 'body-parser';
+const fs = require('fs')
+const https = require('https')
+const path=require('path')
+const cors = require('cors');
 
-//  import blogRoutes from './routes/blogs'
-//  import userRoutes from './routes/users'
+ import blogRoutes from './routes/blogs'
+ import userRoutes from './routes/users'
 
-// import connectDB from './config/db';
+import connectDB from './config/db';
 const app=express();
 const port = process.env.PORT || 3001;
 
@@ -21,14 +21,14 @@ throw new Error("add Your mongo url");
 
 }
 
-// app.use(cors());
+app.use(cors());
 
 //-------------------------- Load Config
-// dotenv.config({ path: "./config/config.env" });
+dotenv.config({ path: "./config/config.env" });
 
 //--------------------------database connectio
-// connectDB()
-// app.use(bodyParser.json())
+connectDB()
+app.use(bodyParser.json())
 
 //--------------------------routes
 // app.use("/",blogRoutes)
