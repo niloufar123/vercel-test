@@ -31,8 +31,8 @@ connectDB()
 app.use(bodyParser.json())
 
 //--------------------------routes
-app.use("/",blogRoutes)
-app.use("/users",userRoutes)
+// app.use("/",blogRoutes)
+// app.use("/users",userRoutes)
 
 app.get('/', (req: Request, res: Response) => {
     return res.send('Express Typescript on Vercel')
