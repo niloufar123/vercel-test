@@ -24,7 +24,7 @@ connectDB()
 // app.use(bodyParser.json())
 
 // //--------------------------routes
-// app.use("/",blogRoutes)
+app.use("/",blogRoutes)
 // app.use("/users",userRoutes)
 
 
