@@ -15,6 +15,7 @@ if (process.env.MONGO_URL) {
 // app.use(cors());
 //-------------------------- Load Config
 dotenv_1.default.config({ path: "./config/config.env" });
+require('dotenv').config();
 //--------------------------database connectio
 (0, db_1.default)();
 // app.use(bodyParser.json())

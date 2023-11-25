@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express'
 
 import  dotenv from 'dotenv';
+
 import bodyParser from 'body-parser';
 // const fs = require('fs')
 // const https = require('https')
@@ -25,6 +26,7 @@ throw new Error("add Your mongo url");
 
 //-------------------------- Load Config
 dotenv.config({ path: "./config/config.env" });
+require('dotenv').config();
 
 //--------------------------database connectio
 connectDB()
