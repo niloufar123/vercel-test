@@ -6,10 +6,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const body_parser_1 = __importDefault(require("body-parser"));
-const fs = require('fs');
-const https = require('https');
-const path = require('path');
+// const fs = require('fs')
+// const https = require('https')
+// const path=require('path')
 const cors = require('cors');
+//  import blogRoutes from './routes/blogs'
+//  import userRoutes from './routes/users'
 const db_1 = __importDefault(require("./config/db"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3001;

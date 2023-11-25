@@ -2,13 +2,13 @@ import express, { Request, Response } from 'express'
 
 import  dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-const fs = require('fs')
-const https = require('https')
-const path=require('path')
+// const fs = require('fs')
+// const https = require('https')
+// const path=require('path')
 const cors = require('cors');
 
- import blogRoutes from './routes/blogs'
- import userRoutes from './routes/users'
+//  import blogRoutes from './routes/blogs'
+//  import userRoutes from './routes/users'
 
 import connectDB from './config/db';
 const app=express();
