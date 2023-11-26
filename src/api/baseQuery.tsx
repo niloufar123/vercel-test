@@ -2,7 +2,7 @@ import { BaseQueryApi, BaseQueryFn, FetchArgs, FetchBaseQueryError, fetchBaseQue
 import { useDispatch } from "react-redux";
 import { setLoading } from "./slice/loadingSlice";
 
-let apiEndpoint = "http://localhost:3001";
+let apiEndpoint = "/";
 
 const baseQueryHeaders = fetchBaseQuery({
   baseUrl: apiEndpoint,

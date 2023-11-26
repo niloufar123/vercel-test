@@ -3,20 +3,20 @@ import NavBar from '../../components/layouts/NavBar'
 import lifeS from "../../assets/Lifestyle.webp"
 import Gift from "../../assets/Gift.webp"
 import PIMG from "../../assets/image-4.jpg"
-import { useGetServicesQuery } from '../../api/Api'
+// import { useGetServicesQuery } from '../../api/Api'
 import { useEffect } from 'react';
 
 function HomePage() {
-  const { data, error, isLoading, isSuccess } = useGetServicesQuery('/');
-  const [recentBlog, getRecentBlog] = useState([])
+  // const { data, error, isLoading, isSuccess } = useGetServicesQuery('/');
+  // const [recentBlog, getRecentBlog] = useState([])
 
 
-  useEffect(() => {
-    if (isSuccess && data) {
-      getRecentBlog(data?.posts)
+  // useEffect(() => {
+  //   if (isSuccess && data) {
+  //     getRecentBlog(data?.posts)
 
-    }
-  }, [data, isSuccess]);
+  //   }
+  // }, [data, isSuccess]);
 
   return (
     <div>
@@ -34,7 +34,7 @@ function HomePage() {
       <h1 className="  mx-2 my-6 text-left text-black font-bold text-xl mb-2 leading-tight">Latest Blogs</h1>
       <div className='my-4 mx-2 container container flex flex-wrap flex-no-wrap sm:flex-wrap md:flex-wrap lg:flex-no-wrap xl:flex-wrap ...' >
 
-        {isSuccess ? recentBlog.slice((recentBlog.length) - 4, recentBlog.length).map((item: any, index: any) => {
+        {/* {isSuccess ? recentBlog.slice((recentBlog.length) - 4, recentBlog.length).map((item: any, index: any) => {
           return (
             <div className="w-full lg:w-1/2 p-3" key={index}>
               <div className="flex flex-col lg:flex-row rounded overflow-hidden h-auto lg:h-32 border shadow shadow-lg">
@@ -46,7 +46,7 @@ function HomePage() {
               </div>
             </div>
           )
-        }) : <></>}
+        }) : <></>} */}
 
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import ThemeSwitcher from '../../ThemeSwitcher'
 // const logo = require("../../assets/B_O_Black.svg") as string;
-import logo from "../../assets/B_O_Black.svg";
+import logo from "../../assets/health-insurance-icon.svg";
 import { Link } from 'react-router-dom';
 
 
@@ -31,18 +31,15 @@ export default function NavBar() {
         
         
 
-        <div className="hidden sm:ml-6 sm:block">
+        <div className=" ">
        
           <div className="flex space-x-4 items-center dark:text-white text-gray-dark">
           <a href="#" className="  rounded-md px-3 text-sm font-medium" aria-current="page">
-          <img src={logo} alt="React Logo"  className="h-fit	height: fit-content w-max	width: max-content"/>
+          <img src={logo} alt="React Logo"  className="h-fit	height: fit-content w-12	dark:invert	"/>
           </a>
           <Link  className=" hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" to="/">Dashboard</Link>
 
 
-            <a href="#" className=" hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
-            <a href="#" className=" hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-            <Link  className=" hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" to="login">Login</Link>
 
           </div>
         </div>
@@ -73,12 +70,7 @@ export default function NavBar() {
 
   <div className="sm:hidden" id="mobile-menu">
     <div className="space-y-1 px-2 pb-3 pt-2">
-      
-      
-      <a href="#" className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-      <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-      <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-      <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+    
     </div>
   </div>
 </nav>

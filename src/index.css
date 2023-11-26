@@ -25,3 +25,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.Toastify__toast-theme--dark {
+  background: #1f2937 !important;
+  color: var(--toastify-text-color-dark);
+}
+
+
+
+.Toastify__progress-bar--error {
+  background:  rgb(255, 195, 86) !important;  
+}
+:root {--toastify-icon-color-error: rgb(255, 195, 86) !important; }

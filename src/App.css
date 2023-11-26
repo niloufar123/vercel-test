@@ -27,6 +27,9 @@
 .App-link {
   color: #61dafb;
 }
+.filter-style{
+  filter: brightness(0) invert(1);
+}
 
 @keyframes App-logo-spin {
   from {

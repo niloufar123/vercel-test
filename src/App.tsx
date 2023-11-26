@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import "./App.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 import {
   createBrowserRouter,
@@ -10,6 +11,8 @@ import MainLayout from "./components/layouts/MainLayout";
 import { ServiceLoading, SuspenseLoading } from "./components/loading";
 import ErrorIndex from "./pages/errors";
 import Login from "./pages/login";
+import PatientList from "./pages/patientList";
+import { ToastContainer } from "react-toastify";
 
 function App() {
 
@@ -23,11 +26,11 @@ function App() {
         {
           index: true,
           path: "/",
-          element: <HomePage />,
+          element: < Login />,
 
-        },{
-          path:"/login",
-          element:<Login/>
+        }, {
+          path: "/patientList",
+          element: <PatientList />
         }
       ]
     }
@@ -43,6 +46,18 @@ function App() {
       <Suspense fallback={<SuspenseLoading />}>
         <RouterProvider router={router} />
       </Suspense>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <ServiceLoading />
 
     </div>
